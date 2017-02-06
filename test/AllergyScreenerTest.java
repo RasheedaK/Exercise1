@@ -12,4 +12,11 @@ public class AllergyScreenerTest {
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
         assertTrue(allergyScreener.isAllergic(24));
     }
+
+    @Test
+    public void shouldReturnFalseForGivenAllergicScoreOnCallingIsAllergic() {
+        Map<String, Integer> allergens = new HashMap<>();
+        AllergyScreener allergyScreener = new AllergyScreener(allergens);
+        assertTrue(allergyScreener.isAllergic(256));
+    }
 }
