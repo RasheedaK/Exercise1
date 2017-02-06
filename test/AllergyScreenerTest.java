@@ -11,19 +11,29 @@ public class AllergyScreenerTest {
     public void shouldReturnEggsAsAllergenForAllergicScore24O() {
         List<Allergen> allergens = getAllergens();
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
-        String expected = "eggs(1)";
-        assertEquals(expected, allergyScreener.isAllergicTo(256));
+        List<String> expectedAllergens=new ArrayList<>();
+        expectedAllergens.add("eggs(1)");
+        assertEquals(expectedAllergens, allergyScreener.isAllergicTo(256));
     }
 
     @Test
     public void shouldNotReturnEggsAsAllergenIfAllergicScore25() {
         List<Allergen> allergens = getAllergens();
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
-        String expected = "eggs(1)";
-        assertNotEquals(expected, allergyScreener.isAllergicTo(25));
+        List<String> expectedAllergens=new ArrayList<>();
+        expectedAllergens.add("eggs(1)");
+        assertNotEquals(expectedAllergens, allergyScreener.isAllergicTo(25));
     }
 
-
+    @Test
+    public void shouldReturnPeanutsAndChocolateAsAllergensIfAllergicScore34() {
+        List<Allergen> allergens = getAllergens();
+        AllergyScreener allergyScreener = new AllergyScreener(allergens);
+        List<String> expectedAllergens=new ArrayList<>();
+        expectedAllergens.add("peanuts(2)");
+        expectedAllergens.add("chocolate(32)");
+        assertEquals(expectedAllergens, allergyScreener.isAllergicTo(34));
+    }
     private List<Allergen> getAllergens() {
         List<Allergen> allergens = new ArrayList<>();
         allergens.add(new Allergen("eggs", 1));
