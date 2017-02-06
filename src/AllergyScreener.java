@@ -8,7 +8,10 @@ class AllergyScreener {
         this.allergens = allergens;
     }
 
-    boolean isAllergic(int allergyScore) {
-        return (allergyScore<128);
+    String AllergicTo(int allergyScore) {
+        if(allergyScore>128)
+            return "eggs(1)";
+        return "";
     }
+
 }
