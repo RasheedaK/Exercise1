@@ -14,14 +14,19 @@ class AllergyScreener {
             allergensDetected.add(allergens.get(0).toString());
             return allergensDetected;
         } else {
-            String binaryInt = Integer.toBinaryString(allergyScore);
-            String binaryString = new StringBuffer(binaryInt).reverse().toString();
-            for (int i = 0; i < binaryString.length(); i++) {
-                if (binaryString.charAt(i) == '1')
-                    allergensDetected.add(allergens.get(i).toString());
-            }
-            return allergensDetected;
+            return getAllergensListIfAllergicScoreLessThanOrEqualTo128(allergyScore);
         }
+    }
+
+    private List<String> getAllergensListIfAllergicScoreLessThanOrEqualTo128(int allergyScore) {
+        List<String> allergensDetected=new ArrayList<>();
+        String binaryInt = Integer.toBinaryString(allergyScore);
+        String binaryString = new StringBuffer(binaryInt).reverse().toString();
+        for (int i = 0; i < binaryString.length(); i++) {
+            if (binaryString.charAt(i) == '1')
+                allergensDetected.add(allergens.get(i).toString());
+        }
+        return allergensDetected;
     }
 
 }

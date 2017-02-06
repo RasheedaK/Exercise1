@@ -11,7 +11,7 @@ public class AllergyScreenerTest {
     public void shouldReturnEggsAsAllergenForAllergicScore24O() {
         List<Allergen> allergens = getAllergens();
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
-        List<String> expectedAllergens=new ArrayList<>();
+        List<String> expectedAllergens = new ArrayList<>();
         expectedAllergens.add("eggs(1)");
         assertEquals(expectedAllergens, allergyScreener.isAllergicTo(256));
     }
@@ -20,7 +20,7 @@ public class AllergyScreenerTest {
     public void shouldNotReturnEggsAsAllergenIfAllergicScore25() {
         List<Allergen> allergens = getAllergens();
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
-        List<String> expectedAllergens=new ArrayList<>();
+        List<String> expectedAllergens = new ArrayList<>();
         expectedAllergens.add("eggs(1)");
         assertNotEquals(expectedAllergens, allergyScreener.isAllergicTo(25));
     }
@@ -29,21 +29,22 @@ public class AllergyScreenerTest {
     public void shouldReturnPeanutsAndChocolateAsAllergensIfAllergicScore34() {
         List<Allergen> allergens = getAllergens();
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
-        List<String> expectedAllergens=new ArrayList<>();
+        List<String> expectedAllergens = new ArrayList<>();
         expectedAllergens.add("peanuts(2)");
         expectedAllergens.add("chocolate(32)");
         assertEquals(expectedAllergens, allergyScreener.isAllergicTo(34));
     }
+
     private List<Allergen> getAllergens() {
         List<Allergen> allergens = new ArrayList<>();
         allergens.add(new Allergen("eggs", 1));
         allergens.add(new Allergen("peanuts", 2));
-        allergens.add(new Allergen("shellfish",4));
-        allergens.add(new Allergen("strawberries",8));
-        allergens.add(new Allergen("tomatoes",16));
-        allergens.add(new Allergen("chocolate",32));
-        allergens.add(new Allergen("pollen",64));
-        allergens.add(new Allergen("cats",128));
+        allergens.add(new Allergen("shellfish", 4));
+        allergens.add(new Allergen("strawberries", 8));
+        allergens.add(new Allergen("tomatoes", 16));
+        allergens.add(new Allergen("chocolate", 32));
+        allergens.add(new Allergen("pollen", 64));
+        allergens.add(new Allergen("cats", 128));
         return allergens;
     }
 }
