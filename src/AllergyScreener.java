@@ -9,6 +9,6 @@ class AllergyScreener {
     }
 
     boolean isAllergic(int allergyScore) {
-        return (allergyScore>128);
+        return (allergyScore<128);
     }
 }
