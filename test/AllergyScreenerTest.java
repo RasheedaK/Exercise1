@@ -12,7 +12,7 @@ public class AllergyScreenerTest {
         List<Allergen> allergens = getAllergens();
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
         List<String> expectedAllergens = new ArrayList<>();
-        expectedAllergens.add("eggs(1)");
+        expectedAllergens.add(allergens.get(0).toString());
         assertEquals(expectedAllergens, allergyScreener.isAllergicTo(256));
     }
 
@@ -21,7 +21,7 @@ public class AllergyScreenerTest {
         List<Allergen> allergens = getAllergens();
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
         List<String> expectedAllergens = new ArrayList<>();
-        expectedAllergens.add("eggs(1)");
+        expectedAllergens.add(allergens.get(0).toString());
         assertNotEquals(expectedAllergens, allergyScreener.isAllergicTo(25));
     }
 
@@ -30,8 +30,8 @@ public class AllergyScreenerTest {
         List<Allergen> allergens = getAllergens();
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
         List<String> expectedAllergens = new ArrayList<>();
-        expectedAllergens.add("peanuts(2)");
-        expectedAllergens.add("chocolate(32)");
+        expectedAllergens.add(allergens.get(1).toString());
+        expectedAllergens.add(allergens.get(5).toString());
         assertEquals(expectedAllergens, allergyScreener.isAllergicTo(34));
     }
 
