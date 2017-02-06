@@ -14,12 +14,12 @@ class AllergyScreener {
             allergensDetected.add(allergens.get(0).toString());
             return allergensDetected;
         } else {
-            return getAllergensListIfAllergicScoreLessThanOrEqualTo128(allergyScore);
+            return getAllergensIfScoreLessthanOrEqualto128(allergyScore);
         }
     }
 
-    private List<String> getAllergensListIfAllergicScoreLessThanOrEqualTo128(int allergyScore) {
-        List<String> allergensDetected=new ArrayList<>();
+    private List<String> getAllergensIfScoreLessthanOrEqualto128(int allergyScore) {
+        List<String> allergensDetected = new ArrayList<>();
         String binaryInt = Integer.toBinaryString(allergyScore);
         String binaryString = new StringBuffer(binaryInt).reverse().toString();
         for (int i = 0; i < binaryString.length(); i++) {
