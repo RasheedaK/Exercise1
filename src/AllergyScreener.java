@@ -1,16 +1,16 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 class AllergyScreener {
-    Map<String, Integer> allergens = new HashMap<>();
+    List<Allergen> allergens=new ArrayList<>();
 
-    AllergyScreener(Map<String, Integer> allergens) {
+    AllergyScreener(List<Allergen> allergens) {
         this.allergens = allergens;
     }
 
-    String AllergicTo(int allergyScore) {
+    String isAllergicTo(int allergyScore) {
         if(allergyScore>128)
-            return "eggs(1)";
+            return allergens.get(0).toString();
         return "";
     }
 
