@@ -10,7 +10,7 @@ class AllergyScreener {
 
     List<String> isAllergicTo(int allergyScore) {
         List<String> allergensDetected = new ArrayList<>();
-        if (allergyScore > 128) {
+        if (allergyScore > 255) {
             allergensDetected.add(allergens.get(0).toString());
             return allergensDetected;
         } else {
