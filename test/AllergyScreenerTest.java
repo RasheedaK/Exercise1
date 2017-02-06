@@ -13,7 +13,7 @@ public class AllergyScreenerTest {
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
         List<String> expectedAllergens = new ArrayList<>();
         expectedAllergens.add(allergens.get(0).toString());
-        assertEquals(expectedAllergens, allergyScreener.isAllergicTo(256));
+        assertEquals(expectedAllergens, allergyScreener.getAllergens(256));
     }
 
     @Test
@@ -22,7 +22,7 @@ public class AllergyScreenerTest {
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
         List<String> expectedAllergens = new ArrayList<>();
         expectedAllergens.add(allergens.get(0).toString());
-        assertNotEquals(expectedAllergens, allergyScreener.isAllergicTo(25));
+        assertNotEquals(expectedAllergens, allergyScreener.getAllergens(25));
     }
 
     @Test
@@ -32,7 +32,7 @@ public class AllergyScreenerTest {
         List<String> expectedAllergens = new ArrayList<>();
         expectedAllergens.add(allergens.get(1).toString());
         expectedAllergens.add(allergens.get(5).toString());
-        assertEquals(expectedAllergens, allergyScreener.isAllergicTo(34));
+        assertEquals(expectedAllergens, allergyScreener.getAllergens(34));
     }
 
     @Test
@@ -42,7 +42,7 @@ public class AllergyScreenerTest {
         List<String> expectedAllergens = new ArrayList<>();
         expectedAllergens.add(allergens.get(0).toString());
         expectedAllergens.add(allergens.get(1).toString());
-        assertEquals(expectedAllergens, allergyScreener.isAllergicTo(3));
+        assertEquals(expectedAllergens, allergyScreener.getAllergens(3));
     }
 
     @Test
@@ -52,7 +52,7 @@ public class AllergyScreenerTest {
         List<String> expectedAllergens = new ArrayList<>();
         expectedAllergens.add(allergens.get(0).toString());
         expectedAllergens.add(allergens.get(1).toString());
-        assertNotEquals(expectedAllergens, allergyScreener.isAllergicTo(36));
+        assertNotEquals(expectedAllergens, allergyScreener.getAllergens(36));
     }
 
     @Test
@@ -65,7 +65,7 @@ public class AllergyScreenerTest {
         expectedAllergens.add(allergens.get(5).toString());
         expectedAllergens.add(allergens.get(6).toString());
         expectedAllergens.add(allergens.get(7).toString());
-        assertEquals(expectedAllergens, allergyScreener.isAllergicTo(248));
+        assertEquals(expectedAllergens, allergyScreener.getAllergens(248));
     }
 
 

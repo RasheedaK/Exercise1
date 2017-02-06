@@ -19,7 +19,7 @@ public class Main {
         int allergyScore=0;
         try {
             allergyScore = sc.nextInt();
-            System.out.println("Allergic to "+allergyScreener.isAllergicTo(allergyScore));
+            System.out.println("Allergic to "+allergyScreener.getAllergens(allergyScore));
         }catch (Exception e){
             System.out.println("Invalid Input");
         }

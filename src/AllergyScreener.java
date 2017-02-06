@@ -3,22 +3,22 @@ import java.util.List;
 
 class AllergyScreener {
     private List<Allergen> allergens = new ArrayList<>();
-
+    private final int MAX_ALLERGIC_SCORE=255;
     AllergyScreener(List<Allergen> allergens) {
         this.allergens = allergens;
     }
 
-    List<String> isAllergicTo(int allergyScore) {
+    List<String> getAllergens(int allergyScore) {
         List<String> allergensDetected = new ArrayList<>();
-        if (allergyScore > 255) {
+        if (allergyScore > MAX_ALLERGIC_SCORE) {
             allergensDetected.add(allergens.get(0).toString());
             return allergensDetected;
         } else {
-            return getAllergensIfScoreLessthanOrEqualto128(allergyScore);
+            return getAllergensIfScoreLessthanOrEqualtoMaxScore(allergyScore);
         }
     }
 
-    private List<String> getAllergensIfScoreLessthanOrEqualto128(int allergyScore) {
+    private List<String> getAllergensIfScoreLessthanOrEqualtoMaxScore(int allergyScore) {
         List<String> allergensDetected = new ArrayList<>();
         String binaryInt = Integer.toBinaryString(allergyScore);
         String binaryString = new StringBuffer(binaryInt).reverse().toString();
