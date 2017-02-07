@@ -3,9 +3,7 @@ import java.util.List;
 
 class AllergyScreener {
     private List<Allergen> allergens = new ArrayList<>();
-    private final int MAX_ALLERGIC_SCORE = 255;
     private final char BINARY_ONE = '1';
-    private int maxScore;
 
     AllergyScreener(List<Allergen> allergens) {
         this.allergens = allergens;
@@ -13,7 +11,7 @@ class AllergyScreener {
 
     List<String> getAllergens(int allergyScore) {
         List<String> allergensDetected = new ArrayList<>();
-        if (allergyScore > MAX_ALLERGIC_SCORE) {
+        if (allergyScore > getMaxAllergicScore()) {
             allergensDetected.add(allergens.get(0).toString());
             return allergensDetected;
         } else {
