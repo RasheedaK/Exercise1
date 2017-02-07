@@ -9,7 +9,7 @@ public class Allergen {
 
     @Override
     public String toString() {
-        return name+"("+value+")";
+        return name + "(" + value + ")";
     }
 
     int getAllergenValue() {

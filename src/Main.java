@@ -16,11 +16,11 @@ public class Main {
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
         System.out.println("Enter AllergyScore");
         Scanner sc = new Scanner(System.in);
-        int allergyScore=0;
+        int allergyScore = 0;
         try {
             allergyScore = sc.nextInt();
-            System.out.println("Allergic to "+allergyScreener.getAllergens(allergyScore));
-        }catch (Exception e){
+            System.out.println("Allergic to " + allergyScreener.getAllergens(allergyScore));
+        } catch (Exception e) {
             System.out.println("Invalid Input");
         }
     }

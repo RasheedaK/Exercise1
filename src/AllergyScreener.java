@@ -5,6 +5,7 @@ class AllergyScreener {
     private List<Allergen> allergens = new ArrayList<>();
     private final int MAX_ALLERGIC_SCORE = 255;
     private final char BINARY_ONE = '1';
+    private int maxScore;
 
     AllergyScreener(List<Allergen> allergens) {
         this.allergens = allergens;
@@ -29,5 +30,13 @@ class AllergyScreener {
                 allergensDetected.add(allergens.get(i).toString());
         }
         return allergensDetected;
+    }
+
+    int getMaxAllergicScore() {
+        int score = 0;
+        for (Allergen allergen : allergens) {
+            score += allergen.getAllergenValue();
+        }
+        return score;
     }
 }

@@ -68,6 +68,12 @@ public class AllergyScreenerTest {
         assertEquals(expectedAllergens, allergyScreener.getAllergens(248));
     }
 
+    @Test
+    public void shouldReturnMaxScoreAs255ForGivenAllergensList() {
+        List<Allergen> allergens = getAllergens();
+        AllergyScreener allergyScreener = new AllergyScreener(allergens);
+        assertEquals(255, allergyScreener.getMaxAllergicScore());
+    }
 
     private List<Allergen> getAllergens() {
         List<Allergen> allergens = new ArrayList<>();
