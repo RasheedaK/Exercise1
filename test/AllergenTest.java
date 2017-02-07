@@ -16,4 +16,16 @@ public class AllergenTest {
         String expected = "Egg/1/";
         assertNotEquals(expected, allergen.toString());
     }
+
+    @Test
+    public void shouldReturnOneIfAllergenValueIsOne() {
+        Allergen allergen = new Allergen("Egg", 1);
+        assertTrue(1==allergen.getAllergenValue());
+    }
+
+    @Test
+    public void shouldNotReturnOneIfAllergenValueIsTwo() {
+        Allergen allergen = new Allergen("Egg", 2);
+        assertFalse(1==allergen.getAllergenValue());
+    }
 }

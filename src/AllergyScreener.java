@@ -30,5 +30,4 @@ class AllergyScreener {
         }
         return allergensDetected;
     }
-
 }

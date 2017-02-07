@@ -11,4 +11,8 @@ public class Allergen {
     public String toString() {
         return name+"("+value+")";
     }
+
+    int getAllergenValue() {
+        return this.value;
+    }
 }
