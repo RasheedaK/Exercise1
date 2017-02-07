@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 
 public class AllergyScreenerTest {
@@ -73,6 +74,13 @@ public class AllergyScreenerTest {
         List<Allergen> allergens = getAllergens();
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
         assertEquals(255, allergyScreener.getMaxAllergicScore());
+    }
+
+    @Test
+    public void shouldNotReturnMaxScoreAs25ForGivenAllergensList() {
+        List<Allergen> allergens = getAllergens();
+        AllergyScreener allergyScreener = new AllergyScreener(allergens);
+        assertNotEquals(25, allergyScreener.getMaxAllergicScore());
     }
 
     private List<Allergen> getAllergens() {
