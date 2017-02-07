@@ -3,7 +3,9 @@ import java.util.List;
 
 class AllergyScreener {
     private List<Allergen> allergens = new ArrayList<>();
-    private final int MAX_ALLERGIC_SCORE=255;
+    private final int MAX_ALLERGIC_SCORE = 255;
+    private final char BINARY_ONE = '1';
+
     AllergyScreener(List<Allergen> allergens) {
         this.allergens = allergens;
     }
@@ -23,7 +25,7 @@ class AllergyScreener {
         String binaryInt = Integer.toBinaryString(allergyScore);
         String binaryString = new StringBuffer(binaryInt).reverse().toString();
         for (int i = 0; i < binaryString.length(); i++) {
-            if (binaryString.charAt(i) == '1')
+            if (binaryString.charAt(i) == BINARY_ONE)
                 allergensDetected.add(allergens.get(i).toString());
         }
         return allergensDetected;
