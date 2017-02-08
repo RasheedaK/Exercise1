@@ -13,7 +13,8 @@ public class AllergyScreenerTest {
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
         List<Allergen> expectedAllergens = new ArrayList<>();
         expectedAllergens.add(allergens.get(0));
-        assertEquals(expectedAllergens, allergyScreener.getAllergens(256));
+        Person person = new Person("Tom", 256);
+        assertEquals(expectedAllergens, allergyScreener.getAllergens(person));
     }
 
     @Test
@@ -22,7 +23,8 @@ public class AllergyScreenerTest {
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
         List<Allergen> expectedAllergens = new ArrayList<>();
         expectedAllergens.add(allergens.get(0));
-        assertNotEquals(expectedAllergens, allergyScreener.getAllergens(25));
+        Person person = new Person("Tom", 25);
+        assertNotEquals(expectedAllergens, allergyScreener.getAllergens(person));
     }
 
     @Test
@@ -32,7 +34,8 @@ public class AllergyScreenerTest {
         List<Allergen> expectedAllergens = new ArrayList<>();
         expectedAllergens.add(allergens.get(1));
         expectedAllergens.add(allergens.get(5));
-        assertEquals(expectedAllergens, allergyScreener.getAllergens(34));
+        Person person = new Person("Tom", 34);
+        assertEquals(expectedAllergens, allergyScreener.getAllergens(person));
     }
 
     @Test
@@ -42,7 +45,8 @@ public class AllergyScreenerTest {
         List<Allergen> expectedAllergens = new ArrayList<>();
         expectedAllergens.add(allergens.get(0));
         expectedAllergens.add(allergens.get(1));
-        assertEquals(expectedAllergens, allergyScreener.getAllergens(3));
+        Person person = new Person("Tom", 3);
+        assertEquals(expectedAllergens, allergyScreener.getAllergens(person));
     }
 
     @Test
@@ -52,7 +56,8 @@ public class AllergyScreenerTest {
         List<Allergen> expectedAllergens = new ArrayList<>();
         expectedAllergens.add(allergens.get(0));
         expectedAllergens.add(allergens.get(1));
-        assertNotEquals(expectedAllergens, allergyScreener.getAllergens(36));
+        Person person = new Person("Tom", 36);
+        assertNotEquals(expectedAllergens, allergyScreener.getAllergens(person));
     }
 
     @Test
@@ -65,7 +70,8 @@ public class AllergyScreenerTest {
         expectedAllergens.add(allergens.get(5));
         expectedAllergens.add(allergens.get(6));
         expectedAllergens.add(allergens.get(7));
-        assertEquals(expectedAllergens, allergyScreener.getAllergens(248));
+        Person person = new Person("Tom", 248);
+        assertEquals(expectedAllergens, allergyScreener.getAllergens(person));
     }
 
     @Test

@@ -9,13 +9,13 @@ class AllergyScreener {
         this.allergens = allergens;
     }
 
-    List<Allergen> getAllergens(int allergyScore) {
+    List<Allergen> getAllergens(Person person) {
         List<Allergen> allergensDetected = new ArrayList<>();
-        if (allergyScore > getMaxAllergicScore()) {
+        if (person.getallergyScore() > getMaxAllergicScore()) {
             allergensDetected.add(allergens.get(0));
             return allergensDetected;
         } else {
-            return getAllergensForLowScore(allergyScore);
+            return getAllergensForLowScore(person.getallergyScore());
         }
     }
 
