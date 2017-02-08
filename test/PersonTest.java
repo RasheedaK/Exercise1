@@ -2,9 +2,7 @@ import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 public class PersonTest {
     @Test
@@ -12,6 +10,7 @@ public class PersonTest {
         AllergyScreener mockAllergyScreener = mock(AllergyScreener.class);
         Person person = new Person("Tom", 34,mockAllergyScreener);
         person.askForAllergyTest(34);
+
         verify(mockAllergyScreener, times(1)).getAllergens(34);
     }
 

@@ -15,11 +15,11 @@ class AllergyScreener {
             allergensDetected.add(allergens.get(0));
             return allergensDetected;
         } else {
-            return getHighAllergens(allergyScore);
+            return getAllergensForLowScore(allergyScore);
         }
     }
 
-    private List<Allergen> getHighAllergens(int allergyScore) {
+    private List<Allergen> getAllergensForLowScore(int allergyScore) {
         List<Allergen> allergensDetected = new ArrayList<>();
         String binaryString = new StringBuffer(Integer.toBinaryString(allergyScore)).reverse().toString();
         for (int i = 0; i < binaryString.length(); i++) {
