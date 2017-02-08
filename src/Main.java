@@ -23,9 +23,9 @@ public class Main {
         try {
             List<Allergen> detectedAllergens = person.askForAllergyTest();
             if (detectedAllergens.isEmpty())
-                System.out.println(name+" has no Allergies");
+                System.out.println(person.getName()+" has no Allergies");
             else
-                System.out.println(name+" is Allergic to " + detectedAllergens);
+                System.out.println(person.getName()+" is Allergic to " + detectedAllergens);
         } catch (Exception e) {
             System.out.println("Invalid Input");
         }
