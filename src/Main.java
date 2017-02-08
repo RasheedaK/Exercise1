@@ -19,7 +19,11 @@ public class Main {
         int allergyScore = 0;
         try {
             allergyScore = sc.nextInt();
-            System.out.println("Allergic to " + allergyScreener.getAllergens(allergyScore));
+            List<Allergen> detectedAllergens = allergyScreener.getAllergens(allergyScore);
+            if(detectedAllergens.isEmpty())
+                System.out.println("No Allergens Detected");
+            else
+            System.out.println("Allergic to " + detectedAllergens);
         } catch (Exception e) {
             System.out.println("Invalid Input");
         }
