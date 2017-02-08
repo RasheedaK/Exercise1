@@ -14,4 +14,8 @@ class Person {
     List<Allergen> askForAllergyTest() {
         return allergyScreener.getAllergens(allergyScore);
     }
+
+    public String getName() {
+        return name;
+    }
 }
