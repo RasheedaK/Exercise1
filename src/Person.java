@@ -15,7 +15,7 @@ class Person {
         return allergyScreener.getAllergens(allergyScore);
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 }
