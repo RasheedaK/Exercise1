@@ -19,9 +19,9 @@ public class Main {
         String name=sc.next();
         System.out.println("Enter your AllergyScore");
         int allergyScore = sc.nextInt();
-        Person person=new Person(name,allergyScore,allergyScreener);
+        Person person=new Person(name,allergyScore);
         try {
-            List<Allergen> detectedAllergens = person.askForAllergyTest();
+            List<Allergen> detectedAllergens = person.askForAllergyTest(allergyScreener);
             if (detectedAllergens.isEmpty())
                 System.out.println(person.getName()+" has no Allergies");
             else

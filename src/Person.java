@@ -3,15 +3,13 @@ import java.util.List;
 class Person {
     private final String name;
     private final int allergyScore;
-    private AllergyScreener allergyScreener;
 
-    Person(String name, int allergyScore, AllergyScreener allergyScreener) {
+    Person(String name, int allergyScore) {
         this.name = name;
-        this.allergyScreener = allergyScreener;
         this.allergyScore = allergyScore;
     }
 
-    List<Allergen> askForAllergyTest() {
+    List<Allergen> askForAllergyTest(AllergyScreener allergyScreener) {
         return allergyScreener.getAllergens(allergyScore);
     }
 

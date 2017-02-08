@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class AllergyScreener {
-    private List<Allergen> allergens = new ArrayList<>();
+    private final List<Allergen> allergens;
     private final char BINARY_ONE = '1';
 
     AllergyScreener(List<Allergen> allergens) {
