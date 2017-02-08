@@ -14,16 +14,18 @@ public class Main {
         allergens.add(new Allergen("pollen", 64));
         allergens.add(new Allergen("cats", 128));
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
-        System.out.println("Enter AllergyScore");
         Scanner sc = new Scanner(System.in);
-        int allergyScore = 0;
+        System.out.println("Enter your Name");
+        String name=sc.next();
+        System.out.println("Enter your AllergyScore");
+        int allergyScore = sc.nextInt();
+        Person person=new Person(name,allergyScore,allergyScreener);
         try {
-            allergyScore = sc.nextInt();
-            List<Allergen> detectedAllergens = allergyScreener.getAllergens(allergyScore);
+            List<Allergen> detectedAllergens = person.askForAllergyTest();
             if (detectedAllergens.isEmpty())
-                System.out.println("No Allergens Detected");
+                System.out.println(name+" has no Allergies");
             else
-                System.out.println("Allergic to " + detectedAllergens);
+                System.out.println(name+" is Allergic to " + detectedAllergens);
         } catch (Exception e) {
             System.out.println("Invalid Input");
         }
