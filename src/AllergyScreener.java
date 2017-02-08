@@ -9,23 +9,23 @@ class AllergyScreener {
         this.allergens = allergens;
     }
 
-    List<String> getAllergens(int allergyScore) {
-        List<String> allergensDetected = new ArrayList<>();
+    List<Allergen> getAllergens(int allergyScore) {
+        List<Allergen> allergensDetected = new ArrayList<>();
         if (allergyScore > getMaxAllergicScore()) {
-            allergensDetected.add(allergens.get(0).toString());
+            allergensDetected.add(allergens.get(0));
             return allergensDetected;
         } else {
             return getHighAllergens(allergyScore);
         }
     }
 
-    private List<String> getHighAllergens(int allergyScore) {
-        List<String> allergensDetected = new ArrayList<>();
+    private List<Allergen> getHighAllergens(int allergyScore) {
+        List<Allergen> allergensDetected = new ArrayList<>();
         String binaryInt = Integer.toBinaryString(allergyScore);
         String binaryString = new StringBuffer(binaryInt).reverse().toString();
         for (int i = 0; i < binaryString.length(); i++) {
             if (binaryString.charAt(i) == BINARY_ONE)
-                allergensDetected.add(allergens.get(i).toString());
+                allergensDetected.add(allergens.get(i));
         }
         return allergensDetected;
     }
