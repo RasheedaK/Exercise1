@@ -1,23 +1,22 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String args[]) {
-        List<Allergen> allergens=Dependency.getAllergensList();
+        List<Allergen> allergens = Dependency.getAllergensList();
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter your Name");
-        String name=sc.next();
+        String name = sc.next();
         System.out.println("Enter your AllergyScore");
         int allergyScore = sc.nextInt();
-        Person person=new Person(name,allergyScore);
+        Person person = new Person(name, allergyScore);
         try {
             List<Allergen> detectedAllergens = person.askForAllergyTest(allergyScreener);
             if (detectedAllergens.isEmpty())
-                System.out.println(person.getName()+" has no Allergies");
+                System.out.println(person.getName() + " has no Allergies");
             else
-                System.out.println(person.getName()+" is Allergic to " + detectedAllergens);
+                System.out.println(person.getName() + " is Allergic to " + detectedAllergens);
         } catch (Exception e) {
             System.out.println("Invalid Input");
         }

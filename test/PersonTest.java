@@ -14,16 +14,18 @@ public class PersonTest {
         person.askForAllergyTest(mockAllergyScreener);
         verify(mockAllergyScreener, times(1)).getAllergens(34);
     }
+
     @Test
     public void shouldReturnTomIfPersonNameIsTom() {
-        String expectedName="Tom";
-        Person person=new Person("Tom",23);
-        assertEquals(expectedName,person.getName());
+        String expectedName = "Tom";
+        Person person = new Person("Tom", 23);
+        assertEquals(expectedName, person.getName());
     }
+
     @Test
     public void shouldReturnTomIfPersonNameIsRam() {
-        String expectedName="Tom";
-        Person person=new Person("Ram",23);
-        assertNotEquals(expectedName,person.getName());
+        String expectedName = "Tom";
+        Person person = new Person("Ram", 23);
+        assertNotEquals(expectedName, person.getName());
     }
 }

@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+
 class Dependency {
     static List<Allergen> getAllergensList() {
         List<Allergen> allergens = new ArrayList<>();
