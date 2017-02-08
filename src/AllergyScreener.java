@@ -21,8 +21,7 @@ class AllergyScreener {
 
     private List<Allergen> getHighAllergens(int allergyScore) {
         List<Allergen> allergensDetected = new ArrayList<>();
-        String binaryInt = Integer.toBinaryString(allergyScore);
-        String binaryString = new StringBuffer(binaryInt).reverse().toString();
+        String binaryString = new StringBuffer(Integer.toBinaryString(allergyScore)).reverse().toString();
         for (int i = 0; i < binaryString.length(); i++) {
             if (binaryString.charAt(i) == BINARY_ONE)
                 allergensDetected.add(allergens.get(i));
