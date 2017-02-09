@@ -4,8 +4,8 @@ public class Main {
     public static void main(String args[]) {
         List<Allergen> allergens = Dependency.getAllergensList();
         AllergyScreener allergyScreener = new AllergyScreener(allergens);
-        InputReader inputReader = new InputReader();
-        Person person = inputReader.getInput();
+        InputParser inputParser = new InputParser();
+        Person person = inputParser.getParsedInput();
         List<Allergen> detectedAllergens = allergyScreener.getAllergens(person);
         if (detectedAllergens.isEmpty())
             System.out.println(person.getName() + " has no Allergies");
